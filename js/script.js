@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
       str += chars[Math.floor(Math.random() * chars.length)];
     }
     return str;
-  }
+  };
 
   function generateTemplate(name, data, basicElement) {
     var template = document.getElementById(name).innerHTML;
@@ -18,8 +18,9 @@ document.addEventListener("DOMContentLoaded", function() {
     element.innerHTML = Mustache.render(template, data);
 
     return element;
-  }
+  };
 
+  // Column
   function Column(name) {
     var self = this;
 
@@ -39,15 +40,41 @@ document.addEventListener("DOMContentLoaded", function() {
         self.addCard(new Card(prompt("Enter card name")));
       }
     });
+  }
 
-    // Column prototype
-    Column.prototype = {
-      addCard: function(card) {
-        this.element.querySelector("ul").appendChild(card.element);
-      },
-      removeColumn: function() {
-        this.element.parentNode.removeChild(this.element);
+  // Column prototype
+  Column.prototype = {
+    addCard: function(card) {
+      this.element.querySelector("ul").appendChild(card.element);
+    },
+    removeColumn: function() {
+      this.element.parentNode.removeChild(this.element);
+    }
+  };
+
+  // Card
+  function Card(description) {
+    var self = this;
+
+    this.id = randomString();
+    this.description = description;
+    this.element = generateTemplate("card-template", {
+      description: this.description,
+    }, "li");
+
+    this.element.querySelector(".card").addEventListener("click", function(event) {
+      event.stopPropagation();
+
+      if (event.target.classList.contains("btn-delete")) {
+        self.removeCard();
       }
-    };
+    });
+  }
+
+  // Card prototype
+  Card.prototype = {
+    removeCard: function() {
+      this.element.parentNode.removeChild(this.element);
+    }
   }
 });
