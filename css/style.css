@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Carter+One");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Carter One", cursive;
+  background-color: #c6c6c6;
+}
+
+.board {
+  margin-top: 30px;
+  padding: 10px;
+  width: 1200px;
+  display: block;
+  text-align: center;
+  letter-spacing: 3px;
+}
+/*# sourceMappingURL=style.css.map */
