@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Carter+One");
 * {
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 body {
@@ -16,5 +17,32 @@ body {
   display: block;
   text-align: center;
   letter-spacing: 3px;
+}
+
+h1 {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 44px;
+}
+
+.column-container {
+  padding-top: 40px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+button {
+  margin: 6px 2px;
+  padding: 8px 14px;
+  background-color: #16B500;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  border-radius: 12px;
+  transition-duration: 0.6s;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
