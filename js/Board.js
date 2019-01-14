@@ -29,6 +29,7 @@ document.querySelector('#board .create-column').addEventListener('click', functi
   });  
 });
 
+// INIT SORTABLE
 function initSortable(id) {
   var el = document.getElementById(id);
   var sortable = Sortable.create(el, {
