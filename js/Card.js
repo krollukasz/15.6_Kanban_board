@@ -1,10 +1,10 @@
 // KANBAN CARD CLASS
-function Card(description) {
+function Card(id,) {
   var self = this;
 
-  this.id = randomString();
-  this.description = description;
-  this.element = generateTemplate('card-template', { description: this.description }, 'li');
+  this.id = id;
+  this.name = name || "No name given";
+  this.element = generateTemplate('card-template', { description: this.name }, 'li');
 
   this.element.querySelector('.card').addEventListener('click', function (event) {
     event.stopPropagation();
@@ -14,6 +14,8 @@ function Card(description) {
     }
   });
 }
+
+// CARD METHOD
 Card.prototype = {
 removeCard: function() {
   this.element.parentNode.removeChild(this.element);
