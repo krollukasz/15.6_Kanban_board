@@ -7,9 +7,11 @@ function Card(id,) {
   this.name = name || "No name given";
   this.element = generateTemplate('card-template', { description: this.name }, 'li');
 
+  // Add listener for all cards
   this.element.querySelector('.card').addEventListener('click', function (event) {
     event.stopPropagation();
 
+    // Remove card - propagation stoped, only delete button is active
     if (event.target.classList.contains('btn-delete')) {
         self.removeCard();
     }
