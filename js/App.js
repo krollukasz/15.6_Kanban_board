@@ -1,4 +1,20 @@
-// OGÓLNA FUNKCJA
+// GLOBAL VARIABLES
+var baseUrl = "https://kodilla.com/pl/bootcamp-api";
+var myHeaders =  {
+  "X-Client-Id": "3736",
+  "X-Auth-Token": "4da4872c185a247662e7ea83375dcdc2"
+};
+
+// ASK SERVER ABOUT BOARD RESOURCE
+fetch(baseUrl + "/board", { headers: myHeaders })
+  .then(function(resp) {
+    return resp.json();
+  })
+  .then(function(resp) {
+    setupColumns(resp.columns);
+  });
+
+// GENERAL FUNCION
 function randomString() {
 	var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ'.split();
 	var str = '', i;
