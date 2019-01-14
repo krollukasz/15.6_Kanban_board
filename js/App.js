@@ -22,7 +22,15 @@ function setupColumns(columns) {
   });
 }
 
-// FUNCION TO GENERATE TEMPLATE 
+// FUNCTION TO CREATE CARDS
+function setupCards(col, cards) {
+  cards.forEach(function(card) {
+    var cardObj = new Card(card.id, card.name);
+    col.addCard(cardObj);
+  });
+}
+
+// FUNCION TO GENERATE TEMPLATE WITH MUSTACHE
 function generateTemplate(name, data, basicElement) {
   var template = document.getElementById(name).innerHTML;
   var element = document.createElement(basicElement || "div");
