@@ -1,19 +1,19 @@
 // KANBAN CARD CLASS
-function Card(id,) {
+function Card(id, name) {
   var self = this; // use self to keep context
 
-  // Set initial card parameters
+  // SET INITAL CARD PARAMETERS
   this.id = id;
   this.name = name || "No name given";
-  this.element = generateTemplate('card-template', { description: this.name }, 'li');
+  this.element = generateTemplate("card-template", { description: this.name }, "li");
 
-  // Add listener for all cards
-  this.element.querySelector('.card').addEventListener('click', function (event) {
+  // ADD LISTENER FOR ALL CARDS
+  this.element.querySelector(".card").addEventListener("click", function (event) {
     event.stopPropagation();
 
-    // Remove card - propagation stoped, only delete button is active
-    if (event.target.classList.contains('btn-delete')) {
-        self.removeCard();
+    // REMOVE CARD - PROPAGATION STOPED, ONLY DELETE BUTTON IS ACTIVE
+    if (event.target.classList.contains("btn-delete")) {
+      self.removeCard();
     }
   });
 }
@@ -22,7 +22,7 @@ function Card(id,) {
 
 Card.prototype = {
 
-// remove card method
+// REMOVE CARD METHOD
 removeCard: function() {
   var self = this;
 
@@ -31,7 +31,7 @@ removeCard: function() {
       return resp.json();
     })
     .then(function(resp) {
-      self.element.parentNode.removeChild(this.element);
+      self.element.parentNode.removeChild(self.element);
     })
   }
 }
