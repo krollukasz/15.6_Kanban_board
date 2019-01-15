@@ -1,6 +1,6 @@
 // GLOBAL VARIABLES
 var prefix = "https://cors-anywhere.herokuapp.com/";
-var baseUrl = "https://kodilla.com/pl/bootcamp-api";
+var baseUrl = prefix + "https://kodilla.com/pl/bootcamp-api";
 var myHeaders =  {
   "X-Client-Id": "3736",
   "X-Auth-Token": "4da4872c185a247662e7ea83375dcdc2"
