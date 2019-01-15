@@ -19,6 +19,7 @@ document.querySelector('#board .create-column').addEventListener('click', functi
     method: "POST",
     headers: myHeaders,
     body: data,
+    cache: "no-cache",
   })
   .then(function(resp) {
     return resp.json();

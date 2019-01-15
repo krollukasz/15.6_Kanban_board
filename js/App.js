@@ -1,4 +1,5 @@
 // GLOBAL VARIABLES
+var prefix = "https://cors-anywhere.herokuapp.com/";
 var baseUrl = "https://kodilla.com/pl/bootcamp-api";
 var myHeaders =  {
   "X-Client-Id": "3736",
@@ -6,7 +7,10 @@ var myHeaders =  {
 };
 
 // ASK SERVER ABOUT BOARD RESOURCE
-fetch(baseUrl + "/board", { headers: myHeaders })
+fetch(prefix + baseUrl + "/board", {
+  headers: myHeaders,
+  cache: "no-cache",
+})
   .then(function(resp) {
     return resp.json();
   })
