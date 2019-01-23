@@ -7,7 +7,7 @@ var myHeaders =  {
 };
 
 // ASK SERVER ABOUT BOARD RESOURCE
-fetch(prefix + baseUrl + "/board", {
+fetch(baseUrl + "/board", {
   headers: myHeaders,
   cache: "no-cache",
 })
@@ -23,6 +23,7 @@ function setupColumns(columns) {
   columns.forEach(function(column) {
     var col = new Column(column.id, column.name);
     board.addColumn(col);
+    setupCards(col, column.cards);
   });
 }
 
