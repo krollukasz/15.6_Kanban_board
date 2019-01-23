@@ -36,9 +36,6 @@ function Column(id, name) {
         var card = new Card(resp.id, cardName);
         self.addCard(card);
       });
-
-      // Add card method
-      self.addCard(new Card(cardName));
     }
 });
 }
