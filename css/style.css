@@ -13,7 +13,7 @@ body {
 .board {
   margin-top: 30px;
   padding: 10px;
-  width: 1200px;
+  max-width: 1200px;
   display: block;
   text-align: center;
   letter-spacing: 3px;
@@ -60,6 +60,7 @@ button:hover {
 
 ul {
   padding-left: 0;
+  min-height: 100px;
   list-style-type: none;
 }
 
