@@ -75,4 +75,25 @@ ul {
   border-radius: 12px;
   letter-spacing: 1px;
 }
+
+@media (max-width: 768px) {
+  .board {
+    max-width: 100%;
+  }
+  .board .column-container {
+    display: block;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .column-container .column {
+    padding: 20px;
+    width: 100%;
+    min-height: 100px;
+  }
+  .ul {
+    min-height: 50px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
