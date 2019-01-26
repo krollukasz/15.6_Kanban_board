@@ -78,7 +78,7 @@ ul {
 
 @media (max-width: 768px) {
   .board {
-    width: 100%;
+    max-width: 100%;
   }
   .board .column-container {
     display: block;
